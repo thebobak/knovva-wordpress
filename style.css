@@ -57,6 +57,7 @@
 body {
   margin: 0;
   -webkit-font-smoothing: auto;
+
 }
 
 article,
@@ -675,6 +676,7 @@ a img.aligncenter {
 #content.site-content {
   padding-bottom: 3.75rem;
   padding-top: 4.125rem;
+  min-height: 100%;
 }
 
 .sticky .entry-title::before {
@@ -922,6 +924,9 @@ footer#colophon {
   color: #99979c;
   background-color: #f7f7f7;
   font-size: 85%;
+  display: block;
+  position: absolute;
+  width: 100%;
 }
 
 .copyright {
@@ -950,6 +955,23 @@ footer#colophon {
   html {
     font-size: 95%;
   }
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 95%;
+  }
+
+  .entry-content-page .card .card-body h4.card-title{
+    display: block;
+    min-height: 40px;
+}
+
+
+
+  
 }
 /*--------------------------------------------------------------
 ## Netbook
@@ -966,6 +988,10 @@ footer#colophon {
   html {
     font-size: 90%;
   }
+
+  .entry-content-page .card img.card-img-top {
+  max-height: 210px;
+}
 }
 /*--------------------------------------------------------------
 ## iPad
@@ -974,6 +1000,15 @@ footer#colophon {
   html {
     font-size: 88%;
   }
+
+   .entry-content-page .card img.card-img-top {
+   max-height: 300px;
+  }
+
+  .entry-content-page .card .card-body h4.card-title{
+    display: block;
+    min-height: auto;
+}
 }
 /*--------------------------------------------------------------
 ## iPad
@@ -983,3 +1018,16 @@ footer#colophon {
     font-size: 86%;
   }
 }
+
+/*--------------------------------------------------------------
+## image height on course listing page
+--------------------------------------------------------------*/
+
+
+.entry-content-page .card {
+  height: 100%;
+}
+
+
+
+

@@ -43,8 +43,18 @@
 	}
 ?>
 
+<?php
+
+  // Get the course launch date //
+  $q = (string) get_field('launch_date');
+  $y = substr($q,0,4);
+  $m = substr($q,4,2);
+  $d = substr($q,6);
+  $launchdate = "$m/$d/$y";
+
+  ?>
 <?php // Display the Card // ?>
-  <div class="col-sm-4">
+  <div class="col-md-4" style="margin-bottom: 20px;">
     <div class="card">
      <img class="card-img-top"
      		src="<?php the_post_thumbnail_url(); ?>"
@@ -58,7 +68,7 @@
         <p class="card-text"><?php the_excerpt();?></p>
         <?php if (is_user_logged_in()) :?>
         <?php if($hiddenpage) : ?>
-        <button type="button" class="btn btn-secondary" disabled>Coming Soon</button>
+        <button type="button" class="btn btn-secondary" disabled>Available <?php echo $launchdate; ?></button>
         <?php else: ?>
         <a href="<?php the_field('articulate_direct_url');?>" class="btn btn-primary" target="_blank">Launch Class</a>
     	<?php endif; ?>

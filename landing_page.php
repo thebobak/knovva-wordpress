@@ -19,15 +19,16 @@ $video_url_acf = get_field('landing_page_video_url');
     <section id="primary" class="content-area landing-page <?php the_ID(); ?>" style="width: 100%">
         <main id="main" class="site-main" role="main">
             <div class="container">
-              <h1><?php echo get_the_title(); ?></h1>
+            <h1><?php echo get_the_title(); ?></h1>
                <div class="row">
 
-                <div class="col-md-5">
-                 
+                <div class="col-md-6">
+                    
                   <?php echo $output;?> 
                 </div>
-                <div class="col-md-7">
-                   <iframe width="100%" height="400" src="<?php echo $video_url_acf;  ?>" frameborder="0" allowfullscreen></iframe>
+                <div class="col-md-6">
+                  <!--  <iframe width="100%" height="350" src="<?php //echo $video_url_acf;  ?>" frameborder="0" allowfullscreen></iframe> -->
+                   <?php echo do_shortcode('[fvplayer src="http://cn.knovva.com/lms/wp-content/uploads/2017/12/hellothere.mp4" width="600" height="400" embed="true"]'); ?>
                 </div>
                </div>  
             </div>

@@ -29,14 +29,15 @@ $index_page_image_url = get_field('index_page_image_url');
         <main id="main" class="site-main" role="main">
             <div class="container">
             
-              <!--<h1><?php //echo get_the_title(); ?></h1>-->
+             
                <div class="row">
 
-                <div class="col-md-5">
+                <div class="col-md-6">
+                   <h1 style="margin-top: 0"><?php echo get_the_title(); ?></h1>
                  
                   <?php echo $output;?> 
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-6">
                    <img class="img img-responsive img-thumbnail" style="width: 100%;height: auto" src="<?php echo $index_page_image_url; ?>">
                 </div>
                </div>  

@@ -30,8 +30,6 @@
   </section>
 <section>
 
-  <button type="button" onclick="expand()">Expand All</button>
-<button type="button" onclick="collapse()">Collapse All</button>
   <!-- /////////////////////////// -->
 <?php // THE CONTENT LOOP // ?>
 <?php $loopcounter = 1; ?>
@@ -52,13 +50,4 @@
 
 
 <?php get_footer(); ?>
-  <script>
-    function expand() {
-            $('.collapse').collapse('show');
-        }
-    function collapse() {
-            $('.collapse').collapse('hide');
-        }
-    </script>
-    
     
