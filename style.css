@@ -323,6 +323,10 @@ header#masthead {
   text-decoration: none;
 }
 
+#masthead > div > nav > div.navbar-brand > a > img {
+  height: 35px;
+}
+
 #page-sub-header {
   position: relative;
   padding-top: 5rem;
@@ -382,17 +386,44 @@ a.page-scroller {
   padding-right: 0;
 }
 
-#masthead .navbar-nav > li > a {
-  color: white;
-  padding: 0.5rem;
-  font-weight: 500;
-  font-size: 14px;
+#masthead .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#masthead .navbar-nav > li > a  {
+    color: white;
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 12px;
+    border-left: 1px solid white;
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+}
+
+#masthead .navbar-nav > li:last-child > a  {
+    
+    border-right: 1px solid white;
+  
+}
+
+@media only screen and (max-width: 1200px) {
+   #masthead .navbar-nav > li > a {
+    border: none;
+    text-align: left;
+   }
+
+   #masthead .navbar-nav > li:last-child > a  {
+    border: none;
+   }
 }
 
 #masthead .navbar-nav > li > a:hover {
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   /*background: #f9f9f9;*/
+  text-decoration: underline;
 }
 
 .navbar-brand {
@@ -673,11 +704,18 @@ a img.aligncenter {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+#page {
+  position: relative;
+  min-height: 100vh;
+}
+
 #content.site-content {
-  padding-bottom: 3.75rem;
+  padding-bottom: 13rem;
   padding-top: 4.125rem;
   min-height: 100%;
 }
+
+
 
 .sticky .entry-title::before {
   content: '\f08d';
@@ -922,11 +960,16 @@ object {
 --------------------------------------------------------------*/
 footer#colophon {
   color: #99979c;
-  background-color: #f7f7f7;
+  background-color: #303030;
   font-size: 85%;
   display: block;
   position: absolute;
   width: 100%;
+  bottom: 0;
+}
+
+#colophon .container {
+  padding: 1rem!important;
 }
 
 .copyright {
@@ -938,6 +981,30 @@ footer#colophon {
 .copyright a, footer#colophon a {
   color: inherit;
 }
+
+#colophon p {
+  margin:0 auto;
+  font-size: 8px;
+  color: lightwhite;
+
+}
+
+.footer-menu a.nav-link {
+  padding:0;
+}
+
+#colophon > div > div.site-logo.row > div > img {
+   height:30px;
+   margin: 10px auto;
+   display: block
+}
+
+#colophon > div > div.site-logo.row > img {
+   height:30px;
+   margin: 10px auto;
+   display: block
+}
+
 
 @media screen and (max-width: 767px) {
   #masthead .navbar-nav > li > a {
@@ -1027,6 +1094,291 @@ footer#colophon {
 .entry-content-page .card {
   height: 100%;
 }
+
+/*--------------------------------------------------------------
+## New landing page style   -- intro 
+--------------------------------------------------------------*/
+.site-content #landing-banner-full-width .container{
+  position: relative;
+  height: 75vh;
+}
+
+
+.site-content #landing-banner-full-width .container .text-wrapper {
+  position: absolute;
+  bottom:5vh;
+}
+
+@media only screen and (max-width: 767px){
+   .site-content #landing-banner-full-width .container .text-wrapper {
+        text-align: center;
+    }
+
+
+}
+
+.site-content #landing-banner-full-width .container .text-wrapper h1{
+    margin-top: 0;
+    color: #105D64;
+    border: none;
+    font-size: 4.5rem;
+
+}
+
+@media only screen and (max-width: 767px){
+   .site-content #landing-banner-full-width .container .text-wrapper {
+        text-align: center;
+    }
+
+    .site-content #landing-banner-full-width .container .text-wrapper h1{
+    
+    font-size: 3rem;
+
+   }
+
+    
+}
+
+
+
+#landing-banner-full-width .knovva-btn {
+  background: transparent;
+    border: 2px solid #105D64;
+    border-radius: 30px;
+    color: #105D64;
+    font-size: 14px;
+    padding: 6px 18px;
+}
+
+
+#landing-banner-full-width .knovva-btn:hover{
+  color: white;
+  background: #105D64;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+## New landing page style   -- about the course
+--------------------------------------------------------------*/
+
+#main .course-intro {
+   background: #F2F2F2;
+   width: 100%;
+}
+
+#main .course-intro .container {
+  padding: 50px 200px 100px;
+}
+
+
+@media only screen and (max-width: 767px){
+  #main .course-intro .container {
+    padding: 50px 50px 100px;
+  }
+}
+
+#main .course-intro h2{
+   text-align: center;
+   color: #105D64;
+   margin:0 auto 20px;
+}
+
+#main .course-intro h2:after{
+    display: block;
+    content: '';
+    width: 4rem;
+    height: 0.1rem;
+    background: #105D64;
+    margin: 0.8rem auto 0;
+}
+
+.course-intro .knovva-btn{
+    background: transparent;
+    border: 2px solid #105D64;
+    border-radius: 30px;
+    color: #105D64 !important;
+    font-size: 14px;
+    padding: 6px 18px;
+    display: inline-block;
+    margin:16px auto 16px;
+    width: 300px;
+    
+}
+
+.course-intro .knovva-btn:hover{
+  color: white !important;
+  background: #105D64!important;
+  cursor: pointer;
+}
+
+
+
+
+/*--------------------------------------------------------------
+## New landing page style   -- schedule
+--------------------------------------------------------------*/
+#main > div.course-schedule {
+  background: #FBB03B;
+  padding:100px 0 180px;
+}
+
+#main .course-schedule h2{
+   text-align: center;
+   color: #105D64;
+   margin:0 auto 20px;
+   border: none;
+}
+
+#main .course-schedule h2:after{
+    display: block;
+    content: '';
+    width: 4rem;
+    height: 0.1rem;
+    background: #105D64;
+    margin: 0.8rem auto 0;
+}
+
+#main .course-schedule p {
+  text-align: center;
+}
+
+
+
+
+#main .course-schedule img.img.img-responsive {
+  margin:0 auto;
+  display: block;
+}
+
+#main .course-schedule ul.list-unstyled {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+   #main > div.course-schedule > div > div.row > div:nth-child(1) > img {
+      float: right;
+      margin-top: 2rem;
+    }
+
+   #main .course-schedule ul.list-unstyled {
+    text-align: left;
+    
+
+   }
+
+}
+
+@media only screen and (min-width: 992px) {
+   
+
+   #main .course-schedule ul.list-unstyled {
+    margin-top: 4rem
+
+   }
+
+   #main > div.course-schedule > div > div.row > div:nth-child(1) > img {
+      width: 65%;
+    }
+
+}
+
+
+
+
+
+#main .course-schedule .btn-wrapper {
+  text-align: center;
+}
+
+#main > .course-schedule a.btn.btn-primary.knovva-btn{
+    background: #105D64;
+    border: 2px solid #105D64;
+    border-radius: 30px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 18px;
+    display: inline-block;
+    margin:16px auto 16px;
+    width: 300px;
+}
+
+#main > .course-schedule a.btn.btn-primary.knovva-btn:hover{
+  background: transparent;
+  color: #105D64;
+  border:2px solid #105D64;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## New landing page style   -- questions
+--------------------------------------------------------------*/
+#main > div.questions {
+  background: #F2F2F2;
+  margin:0;
+  padding: 100px 0;
+}
+
+#main .questions .container h2 {
+  text-align: center;
+  color: #105D64;
+  margin-bottom: 20px;
+  border: none;
+}
+
+#main .questions .container p {
+  color: #105D64;
+  text-align: center;
+}
+
+#main .questions .container .row .col-md-6 {
+  text-align: center;
+}
+
+#main .questions .container .row a.btn.btn-primary.knovva-btn {
+  background: transparent;
+  border-radius: 30px;
+  color: #105D64;
+  display: inline-block;
+  width: 300px;
+}
+
+#main .questions .container .row a.btn.btn-primary.knovva-btn:hover {
+  background: transparent;
+  color: #105D64;
+  border:1px solid #105D64;
+}
+
+
+/*--------------------------------------------------------------
+## Getting started page (aka old landing page)
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+  section.content-area.landing-page .container .row{
+    
+   }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+  section.content-area.landing-page .container .row{
+    padding:0 1rem;
+  
+   }
+
+
+}
+
 
 
 

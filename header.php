@@ -84,12 +84,12 @@
     <?php endif; ?>
     <?php
      $page_id = get_the_ID();
-     $nopadding = 'style="padding-top:0;"';
+     $nopadding = 'style="padding-top:0;padding-bottom:0"';
      $fullWidth = 'style="max-width:100%"';
      //echo $page_id;
     ?>
 
-
+    <!--body starts-->
 	<div id="content" class="site-content" <?php if($page_id == 413){echo $nopadding;}     ?>   >
 		<div class="container"  <?php if($page_id == 413){echo $fullWidth;}     ?>  >
 			<div class="row">
