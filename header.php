@@ -90,7 +90,7 @@
     ?>
 
     <!--body starts-->
-	<div id="content" class="site-content" <?php if($page_id == 413){echo $nopadding;}     ?>   >
-		<div class="container"  <?php if($page_id == 413){echo $fullWidth;}     ?>  >
+	<div id="content" class="site-content" <?php if($page_id == 413 ){echo $nopadding;}     ?>   >
+		<div class="container"  <?php if($page_id == 413 || $page_id ==313){echo $fullWidth;}     ?>  >
 			<div class="row">
                 <?php endif; ?>

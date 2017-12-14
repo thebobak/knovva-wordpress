@@ -1148,6 +1148,7 @@ footer#colophon {
     color: #105D64;
     font-size: 14px;
     padding: 6px 18px;
+    width: 200px;
 }
 
 
@@ -1164,17 +1165,24 @@ footer#colophon {
 #main .course-intro {
    background: #F2F2F2;
    width: 100%;
+   padding: 100px 150px 100px;
 }
 
-#main .course-intro .container {
-  padding: 50px 200px 100px;
-}
+
+
+
 
 
 @media only screen and (max-width: 767px){
-  #main .course-intro .container {
-    padding: 50px 50px 100px;
+  #main .course-intro {
+   padding: 50px 15px 20px;
   }
+}
+
+@media only screen and (min-width: 1024px) {
+  #main .course-intro .container p{
+  padding: 10px 150px
+}
 }
 
 #main .course-intro h2{
@@ -1363,21 +1371,65 @@ footer#colophon {
 --------------------------------------------------------------*/
 
 @media only screen and (min-width: 768px) {
-  section.content-area.landing-page .container .row{
-    
-   }
+  section.content-area.landing-page .container  {
+    padding-left: 0;
+  } 
+}
+
+
+section.content-area.landing-page .container .startpage-title {
 
 
 }
 
-@media only screen and (max-width: 767px) {
-  section.content-area.landing-page .container .row{
-    padding:0 1rem;
-  
-   }
-
+section.content-area.landing-page .video-section {
+   margin-top: 72px;
 
 }
+
+
+
+section.content-area.landing-page .video-section .container div{
+   
+   margin: 0 auto;
+
+}
+
+
+
+
+
+section.content-area.landing-page .download-section {
+  margin-top: 72px;
+  background: #eeeeee70;
+}
+
+section.content-area.landing-page .download-section p {
+  margin-bottom: 3rem;
+}
+
+
+section.content-area.landing-page .download-section img.img.img-responsive{
+  max-width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+section.content-area.landing-page .download-section h5{
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+
+   
+
+
+section.content-area.landing-page .text-section{
+  margin-top: 72px;
+}
+
+
 
 
 
