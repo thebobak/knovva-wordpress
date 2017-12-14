@@ -29,9 +29,9 @@ add_post_type_support( 'page', 'excerpt' );
 add_action('after_setup_theme', 'remove_admin_bar');
  
 function remove_admin_bar() {
-	if (!current_user_can('administrator') && !is_admin()) {
-  		show_admin_bar(false);
-	}
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
 }
 
 ////////////////////////////
@@ -42,11 +42,11 @@ function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/KAlogo2.png);
-		height:100px;
-		width:198px;
-		background-size: 198px 100px;
-		background-repeat: no-repeat;
-        	padding-bottom: 30px;
+        height:100px;
+        width:198px;
+        background-size: 198px 100px;
+        background-repeat: no-repeat;
+            padding-bottom: 30px;
         }
     </style>
 <?php }
@@ -106,7 +106,7 @@ if ( ! function_exists('custom_post_type') ) {
             'description'           => __( 'FAQ posts', 'text_domain' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields' ),
-            'taxonomies'            => array( 'category', 'post_tag' ),
+            'taxonomies'            => array( 'faq_categories' ),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
@@ -129,3 +129,194 @@ if ( ! function_exists('custom_post_type') ) {
 }
 
 
+if ( ! function_exists( 'faq_categories' ) ) {
+
+// Register Custom Taxonomy
+function faq_categories() {
+
+    $labels = array(
+        'name'                       => 'FAQ Categories',
+        'singular_name'              => 'FAQ Category',
+        'menu_name'                  => 'FAQ Categories',
+        'all_items'                  => 'All Items',
+        'parent_item'                => 'Parent Item',
+        'parent_item_colon'          => 'Parent Item:',
+        'new_item_name'              => 'New Item Name',
+        'add_new_item'               => 'Add New Item',
+        'edit_item'                  => 'Edit Item',
+        'update_item'                => 'Update Item',
+        'view_item'                  => 'View Item',
+        'separate_items_with_commas' => 'Separate items with commas',
+        'add_or_remove_items'        => 'Add or remove items',
+        'choose_from_most_used'      => 'Choose from the most used',
+        'popular_items'              => 'Popular Items',
+        'search_items'               => 'Search Items',
+        'not_found'                  => 'Not Found',
+        'no_terms'                   => 'No items',
+        'items_list'                 => 'Items list',
+        'items_list_navigation'      => 'Items list navigation',
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'faq_taxonomy', array( 'faq' ), $args );
+
+}
+add_action( 'init', 'faq_categories', 0 );
+
+}
+
+
+
+
+/////////////////////////
+// ACF (Custom Fields) //
+/////////////////////////
+
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_index-page-image',
+        'title' => 'index page image',
+        'fields' => array (
+            array (
+                'key' => 'field_5a297aa4f9b96',
+                'label' => 'index_page_image_url',
+                'name' => 'index_page_image_url',
+                'type' => 'text',
+                'instructions' => 'please insert the image url ',
+                'required' => 1,
+                'default_value' => 'https://picsum.photos/200/150',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'none',
+                'maxlength' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'index_page.php',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+    register_field_group(array (
+        'id' => 'acf_knovva-course-settings',
+        'title' => 'Knovva Course Settings',
+        'fields' => array (
+            array (
+                'key' => 'field_5a21ceba07fbf',
+                'label' => 'Page Visibility',
+                'name' => 'visibility',
+                'type' => 'radio',
+                'required' => 1,
+                'choices' => array (
+                    'Hidden' => 'Hidden',
+                    'Visible' => 'Visible',
+                ),
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => 'Visible',
+                'layout' => 'horizontal',
+            ),
+            array (
+                'key' => 'field_5a21e1eb69cd9',
+                'label' => 'Articulate Direct URL',
+                'name' => 'articulate_direct_url',
+                'type' => 'text',
+                'default_value' => 'http://cn.knovva.com/lms',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array (
+                'key' => 'field_5a2b0e974fce7',
+                'label' => 'Launch Date',
+                'name' => 'launch_date',
+                'type' => 'date_picker',
+                'instructions' => 'Choose the date that this unit should become available.  NOTE:   This is for DISPLAY ONLY!   This does NOT automatically launch the unit on this date!',
+                'required' => 1,
+                'date_format' => 'yymmdd',
+                'display_format' => 'mm/dd/yy',
+                'first_day' => 0,
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'page_parent',
+                    'operator' => '==',
+                    'value' => '205',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'default',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+    register_field_group(array (
+        'id' => 'acf_landing-page-video-section',
+        'title' => 'Landing page video section',
+        'fields' => array (
+            array (
+                'key' => 'field_5a238253cfeac',
+                'label' => 'Landing Page Videl URL',
+                'name' => 'landing_page_video_url',
+                'type' => 'text',
+                'required' => 1,
+                'default_value' => 'https://www.youtube.com/embed/3cYBfuphkuE',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'none',
+                'maxlength' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'page',
+                    'operator' => '==',
+                    'value' => '313',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'default',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}

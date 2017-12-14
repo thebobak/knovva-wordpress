@@ -45,12 +45,29 @@
 
 <?php
 
+  // Array for Months //
+  $monthtext = array(
+      '01' => 'Jan.',
+      '02' => 'Feb.',
+      '03' => 'Mar.',
+      '04' => 'Apr.',
+      '05' => 'May',
+      '06' => 'Jun.',
+      '07' => 'Jul.',
+      '08' => 'Aug.',
+      '09' => 'Sep.',
+      '10' => 'Oct.',
+      '11' => 'Nov.',
+      '12' => 'Dec.'
+  );
+
   // Get the course launch date //
   $q = (string) get_field('launch_date');
   $y = substr($q,0,4);
   $m = substr($q,4,2);
   $d = substr($q,6);
-  $launchdate = "$m/$d/$y";
+  $launchdate = "$monthtext[$m] $d, $y";
+
 
   ?>
 <?php // Display the Card // ?>
