@@ -25,6 +25,9 @@
   </section>
 <section>
 
+<!-- Buttons to Expand/Collapse All.  Could probably be done better -->
+<button onClick="expand();">Expand All</button>
+<button onClick="collapse();">Collapse All</button>
 
   <!-- /////////////////////////// -->
 <?php // THE CONTENT LOOP // ?>
@@ -69,6 +72,15 @@
         </div><!-- .entry-content-page -->
 
 
+<script>
+  // Expand/Collapse functions.  Note:  WP uses 'jQuery' instead of '$' //
+  function expand() {
+    jQuery('.collapse').collapse('show');
+  }
+  function collapse() {
+    jQuery('.collapse').collapse('hide');
+  }
+</script>
 
 <?php get_footer(); ?>
     

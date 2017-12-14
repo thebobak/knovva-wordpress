@@ -175,9 +175,13 @@ add_action( 'init', 'faq_categories', 0 );
 
 
 
-/////////////////////////
-// ACF (Custom Fields) //
-/////////////////////////
+//////////////////////////////////
+// Register ACF (Custom Fields) //
+//////////////////////////////////
+
+/*  12/14/2017 - This seems to have broken the fields, so I'm commenting it out.
+    Restore the custom fields from the XML backup if they disappear!
+    -Bobak
 
 
 if(function_exists("register_field_group"))
@@ -320,3 +324,5 @@ if(function_exists("register_field_group"))
         'menu_order' => 0,
     ));
 }
+
+*/
