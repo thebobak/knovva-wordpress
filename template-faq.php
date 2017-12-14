@@ -61,7 +61,7 @@
 <!-- FAQ Item -->
   <h4><a data-toggle="collapse" href="#collapse-<?php echo "$loopcounter"; ?>" aria-expanded="false" aria-controls="collapse-<?php echo "$loopcounter"; ?>"><?php the_title(); ?></a></h4>
 
-  <div id="collapse-<?php echo "$loopcounter"; ?>" class="collapse" role="tabpanel" aria-labelledby="heading-<?php echo "$loopcounter"; ?>" data-parent="#accordion">
+  <div id="collapse-<?php echo "$loopcounter"; ?>" class="faq-collapsible" role="tabpanel" aria-labelledby="heading-<?php echo "$loopcounter"; ?>" data-parent="#accordion">
     <p> <?php the_content(); ?> </p>
   </div>
 
@@ -75,10 +75,10 @@
 <script>
   // Expand/Collapse functions.  Note:  WP uses 'jQuery' instead of '$' //
   function expand() {
-    jQuery('.collapse').collapse('show');
+    jQuery('.faq-collapsible').collapse('show');
   }
   function collapse() {
-    jQuery('.collapse').collapse('hide');
+    jQuery('.faq-collapsible').collapse('hide');
   }
 </script>
 
