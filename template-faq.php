@@ -61,7 +61,7 @@
 <!-- FAQ Item -->
   <h4><a data-toggle="collapse" href="#collapse-<?php echo "$loopcounter"; ?>" aria-expanded="false" aria-controls="collapse-<?php echo "$loopcounter"; ?>"><?php the_title(); ?></a></h4>
 
-  <div id="collapse-<?php echo "$loopcounter"; ?>" class="faq-collapsible" role="tabpanel" aria-labelledby="heading-<?php echo "$loopcounter"; ?>" data-parent="#accordion">
+  <div id="collapse-<?php echo "$loopcounter"; ?>" class="faq-collapsible collapse" role="tabpanel" aria-labelledby="heading-<?php echo "$loopcounter"; ?>" data-parent="#accordion">
     <p> <?php the_content(); ?> </p>
   </div>
 
